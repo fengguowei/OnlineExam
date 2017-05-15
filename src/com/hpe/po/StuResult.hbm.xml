@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-12-10 17:28:55 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.hpe.po.StuResult" table="STURESULT">
+        <id name="id" type="java.lang.String">
+            <column name="ID" />
+            <generator class="uuid" />
+        </id>
+        <property name="whichLesson" type="java.lang.String">
+            <column name="WHICHLESSON" />
+        </property>
+        <property name="resMore" type="java.lang.Double">
+            <column name="RESMORE" />
+        </property>
+        <property name="resSingle" type="java.lang.Double">
+            <column name="RESSINGLE" />
+        </property>
+        <property name="resTotal" type="java.lang.Double">
+            <column name="RESTOTAL" />
+        </property>
+        <property name="joinTime" type="java.util.Date">
+            <column name="JOINTIME" />
+        </property>
+        <many-to-one name="student" class="com.hpe.po.Student" fetch="join" lazy="false">
+            <column name="STUDENT_ID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

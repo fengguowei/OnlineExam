@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-12-8 14:30:49 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hpe.po.Shiti" table="SHITI">
+        <id name="id" type="java.lang.String">
+            <column name="ID" />
+            <generator class="uuid" />
+        </id>
+        <property name="type" type="java.lang.String">
+            <column name="TYPE" />
+        </property>
+        <property name="question" type="java.lang.String">
+            <column name="QUESTION" />
+        </property>
+        <property name="optionA" type="java.lang.String">
+            <column name="OPTIONA" />
+        </property>
+        <property name="optionB" type="java.lang.String">
+            <column name="OPTIONB" />
+        </property>
+        <property name="optionC" type="java.lang.String">
+            <column name="OPTIONC" />
+        </property>
+        <property name="optionD" type="java.lang.String">
+            <column name="OPTIOND" />
+        </property>
+        <property name="answer" type="java.lang.String">
+            <column name="ANSWER" />
+        </property>
+        <property name="score" type="java.lang.Double">
+            <column name="SCORE" />
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK" />
+        </property>
+        <many-to-one name="taoti" class="com.hpe.po.Taoti" fetch="join" lazy="false">
+            <column name="TAOTI_ID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

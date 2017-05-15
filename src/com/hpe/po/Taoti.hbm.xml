@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-12-8 14:30:49 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hpe.po.Taoti" table="TAOTI">
+        <id name="id" type="java.lang.String">
+            <column name="ID" />
+            <generator class="uuid" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="createTime" type="java.util.Date">
+            <column name="CREATETIME" />
+        </property>
+        <many-to-one name="lesson" class="com.hpe.po.Lesson"  fetch="join" lazy="false">
+            <column name="LESSON_ID" />
+        </many-to-one>
+        <set name="shitis" table="SHITI" inverse="false" lazy="true" cascade="all">
+            <key>
+                <column name="TAOTI_ID" />
+            </key>
+            <one-to-many class="com.hpe.po.Shiti" />
+        </set>
+    </class>
+</hibernate-mapping>
